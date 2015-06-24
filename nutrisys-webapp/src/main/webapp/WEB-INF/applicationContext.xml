@@ -16,7 +16,7 @@
 
 	<context:annotation-config />
 
-	<context:component-scan base-package="br.com.cavy.training.management.*" />
+	<context:component-scan base-package="br.com.cavy.studios.nutrisys.*" />
 
 	<!-- Factory bean that creates the Mongo instance -->
 	<bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
@@ -26,9 +26,9 @@
 	<!-- MongoTemplate for connecting and quering the documents in the database -->
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 		<constructor-arg name="mongo" ref="mongo" />
-		<constructor-arg name="databaseName" value="training-management" /> 
+		<constructor-arg name="databaseName" value="nutrisys-database" /> 
 	</bean>
 
-	<mongo:repositories base-package="br.com.cavy.training.management.dao" />
+	<mongo:repositories base-package="br.com.cavy.studios.nutrisys.dao" />
 
 </beans>
