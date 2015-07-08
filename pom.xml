@@ -14,19 +14,36 @@
 	</modules>
 
 	<properties>
-		<spring.version>4.0.6.RELEASE</spring.version>
-		<eclipse.link.version>2.5.1</eclipse.link.version>
 		<junit.version>4.11</junit.version>
-		<vraptor.version>3.5.4</vraptor.version>
+		<spring.version>4.0.6.RELEASE</spring.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
+
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
 			</dependency>
 
 		</dependencies>

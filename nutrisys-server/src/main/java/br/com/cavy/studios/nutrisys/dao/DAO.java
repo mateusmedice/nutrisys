@@ -3,6 +3,9 @@ package br.com.cavy.studios.nutrisys.dao;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public interface DAO<T, PK extends Serializable> {
 
 	T add(T t);
@@ -12,4 +15,5 @@ public interface DAO<T, PK extends Serializable> {
 	T getById(T t, PK pk);
 
 	List<T> getAll(T t);
+	
 }
