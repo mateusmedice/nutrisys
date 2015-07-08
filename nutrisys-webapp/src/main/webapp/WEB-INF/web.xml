@@ -6,10 +6,6 @@
 
 	<display-name>Nutrisys Webapp</display-name>
 
-	<!-- <context-param> <param-name>contextConfigLocation</param-name> <param-value>/WEB-INF/applicationContext.xml</param-value> 
-		</context-param> <listener> <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> 
-		</listener> <listener> <listener-class>com.sun.faces.config.ConfigureListener</listener-class> 
-		</listener> -->
 	<filter>
 		<filter-name>vraptor</filter-name>
 		<filter-class>br.com.caelum.vraptor.VRaptor</filter-class>
