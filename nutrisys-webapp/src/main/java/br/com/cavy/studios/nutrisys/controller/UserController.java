@@ -1,11 +1,10 @@
 package br.com.cavy.studios.nutrisys.controller;
 
-import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Resource;
 
-@Path("/user")
+@Resource
 public class UserController {
 	
-	@Path("/welcome")
 	public void welcome() {
 		
 	}
