@@ -9,11 +9,7 @@
 	<artifactId>nutrisys-server</artifactId>
 
 	<dependencies>
-	
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-mongodb</artifactId>
-		</dependency>
+
 		
 	</dependencies>
 	
