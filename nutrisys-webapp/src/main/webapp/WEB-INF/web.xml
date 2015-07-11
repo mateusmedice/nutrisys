@@ -6,16 +6,40 @@
 
 	<display-name>Nutrisys Webapp</display-name>
 
+	<!-- ******************************************************* -->
+	<!-- Configuração do SiteMesh -->
+	<!-- ******************************************************* --> 
 	<filter>
-		<filter-name>vraptor</filter-name>
-		<filter-class>br.com.caelum.vraptor.VRaptor</filter-class>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
 	</filter>
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
+	<!-- ******************************************************* -->
+	<!-- Configuracao do VRaptor -->
+	<!-- ******************************************************* -->
 	<context-param>
 		<param-name>br.com.caelum.vraptor.encoding</param-name>
 		<param-value>UTF-8</param-value>
 	</context-param>
+	<!-- Define Locale padrão -->
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.locale</param-name>
+		<param-value>pt_BR</param-value>
+	</context-param>
 
+	<!-- <context-param>
+		<param-name>br.com.caelum.vraptor.provider</param-name>
+		<param-value>br.com.caelum.vraptor.ioc.guice.GuiceProvider</param-value>
+	</context-param> -->
+
+	<filter>
+		<filter-name>vraptor</filter-name>
+		<filter-class>br.com.caelum.vraptor.VRaptor</filter-class>
+	</filter>
 	<filter-mapping>
 		<filter-name>vraptor</filter-name>
 		<url-pattern>/*</url-pattern>
@@ -23,18 +47,12 @@
 		<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
 
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/applicationContext.xml</param-value>
-	</context-param>
 
-	<context-param>
-		<param-name>br.com.caelum.vraptor.provider</param-name>
-		<param-value>br.com.caelum.vraptor.ioc.guice.GuiceProvider</param-value>
-	</context-param>
-
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+	<!-- ******************************************************* -->
+	<!-- Configuracao da Aplicação -->
+	<!-- ******************************************************* -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
 
 </web-app>
