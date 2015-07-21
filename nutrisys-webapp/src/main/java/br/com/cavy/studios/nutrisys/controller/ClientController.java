@@ -1,15 +1,18 @@
 package br.com.cavy.studios.nutrisys.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 
 @Resource
 public class ClientController {
 
-	private final Result result;
+	@Autowired
+	private Result result;
 	
-	public ClientController(Result result) {
-		this.result = result;
+	public ClientController() {
+		
 	}
 	
 	

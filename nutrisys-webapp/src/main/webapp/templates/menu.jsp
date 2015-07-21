@@ -9,8 +9,8 @@
 				<ul class="nav">
 					<li class="active"><a href="${ctx}/dashboard">Home</a></li>
 					<li><a href="${ctx}/client/list">Clientes</a></li>
-					<li><a href="${ctx}/client/invite">Convites</a></li>
 					<li><a href="${ctx}/revenue/list">Receitas</a></li>
+					<li><a href="${ctx}/client/invite">Convites</a></li>
 				</ul>
 				<ul class="nav pull-right">
 					<li><a href="#"><span class="badge badge-success">${usuarioWeb.usuario.nome }</span></a></li>

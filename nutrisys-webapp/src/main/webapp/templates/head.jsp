@@ -1,7 +1,7 @@
 <%@ page pageEncoding="UTF-8"%>
 
 
-		<title>Issue Tracker</title>
+		<title>NutriSys</title>
 		<!-- Bootstrap -->
 		<link href="${ctx}/css/bootstrap.css" rel="stylesheet">
 		<link href="${ctx}/css/bootstrap-responsive.css" rel="stylesheet">
