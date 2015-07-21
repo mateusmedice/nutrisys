@@ -25,20 +25,19 @@
 	<!-- ********************************************* -->
 	<!-- Configuração do DataSource -->
 	<!-- ********************************************* -->
-	<!-- 
 	<context:property-placeholder location="classpath:jdbc.properties"/>
 	 
 	<bean id="dataSource"
 		class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass" value="${jdbc.driverClassName}" />
 		<property name="jdbcUrl" value="${jdbc.url}" />
-    		<property name="user" value="${jdbc.username}" />
+    	<property name="user" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
 		<property name="initialPoolSize" value="3" />
 		<property name="minPoolSize" value="6" />
 		<property name="maxPoolSize" value="20" />
 		<property name="acquireIncrement" value="3" />
-		<property name="checkoutTimeout" value="5000" /> 
+		<property name="checkoutTimeout" value="5000" />
 	</bean>
     
 	<bean id="entityManagerFactory"
@@ -53,7 +52,7 @@
 		<property name="jpaProperties">
 			<props>
 				<prop key="hibernate.format_sql">true</prop>
-				<prop key="hibernate.default_schema">public</prop>
+				<prop key="hibernate.default_schema">nutrisys</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 				<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
 			</props>
@@ -64,8 +63,6 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory"/>
 	</bean>
 	
-	
 	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/> 
-	-->
 	
 </beans>

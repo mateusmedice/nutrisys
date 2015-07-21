@@ -5,6 +5,11 @@ import java.util.List;
 
 public class ServiceProvider extends User {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6956133551550001770L;
+
 	private Long idServiceProvider;
 	
 	private Address address;

@@ -13,7 +13,7 @@
 		
 		<div class="tabbable tabs-left">
 			<ul class="nav nav-tabs">
-				<li class="active"><a href="#tab1" data-toggle="tab">Minhas Issues</a></li>
+				<li class="active"><a href="#tab1" data-toggle="tab">Meus Convites</a></li>
 				<li><a href="#tab2" data-toggle="tab">Todas</a></li>
 			</ul>
 			<div class="tab-content">
