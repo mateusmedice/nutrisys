@@ -17,8 +17,8 @@
 				<input type="text" placeholder="Usuário" name="login">
 				<input type="password" placeholder="Senha" name="senha">
 				<button class="btn btn-primary" type="submit">Logar</button>
+				<a href="${ctx}/createNew">Sign-In</a>
 			</form>
-			<a href="${ctx}/createNew">Sign-In</a>
 		</div>
 		
 	</body>

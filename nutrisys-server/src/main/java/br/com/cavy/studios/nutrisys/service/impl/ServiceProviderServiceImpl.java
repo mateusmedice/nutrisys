@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.cavy.studios.nutrisys.dao.ServiceProviderDAO;
+import br.com.cavy.studios.nutrisys.exception.ServiceException;
 import br.com.cavy.studios.nutrisys.model.ServiceProvider;
 import br.com.cavy.studios.nutrisys.service.ServiceProviderService;
 
@@ -18,6 +19,10 @@ public class ServiceProviderServiceImpl implements ServiceProviderService {
 
 		if (serviceProvider == null) {
 			throw new IllegalArgumentException("Service Provider can't be null.");
+		}
+		
+		if (this.serviceProviderDAO.findBy(serviceProvider.getEmail()) != null) {
+			throw new ServiceException("Usuário já Cadastrado");
 		}
 		
 		return this.serviceProviderDAO.save(serviceProvider);

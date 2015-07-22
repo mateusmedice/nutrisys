@@ -12,13 +12,16 @@ public class ServiceProviderDAOImpl extends DAOImpl<ServiceProvider, Long> imple
 
 	@Override
 	public ServiceProvider findBy(String email, String password) {
-		
 		Criteria criteria = createCriteria(ServiceProvider.class);
-
 		criteria.add(Restrictions.eq("email", email));
-		
 		criteria.add(Restrictions.eq("password", password));
-		
+		return (ServiceProvider) criteria.uniqueResult();
+	}
+
+	@Override
+	public ServiceProvider findBy(String email) {
+		Criteria criteria = createCriteria(ServiceProvider.class);
+		criteria.add(Restrictions.eq("email", email));
 		return (ServiceProvider) criteria.uniqueResult();
 	}
 

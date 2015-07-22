@@ -10,6 +10,5 @@
 		<pattern>/issues*</pattern>
 		<pattern>/revenue*</pattern>
 		<pattern>/dashboard*</pattern>
-		<pattern>/serviceProvider*</pattern>
     </decorator>
 </decorators>
