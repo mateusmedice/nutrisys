@@ -6,6 +6,6 @@ import br.com.cavy.studios.nutrisys.model.Client;
 
 public interface ClientService {
 	
-	List<Client> getAll();
+	List<Client> getAll(Long idUser);
 	
 }

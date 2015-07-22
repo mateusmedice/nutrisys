@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.cavy.studios.nutrisys.dao.AddressDAO;
 import br.com.cavy.studios.nutrisys.model.Address;
-import br.com.cavy.studios.nutrisys.model.AddressServiceModel;
+import br.com.cavy.studios.nutrisys.model.vo.AddressServiceModelVO;
 import br.com.cavy.studios.nutrisys.service.AddressService;
 
 import com.google.gson.Gson;
@@ -58,7 +58,7 @@ public class AddressServiceImpl implements AddressService {
 
 			Gson gson = new Gson();
 			
-			AddressServiceModel addressServiceModel = gson.fromJson(value, AddressServiceModel.class);
+			AddressServiceModelVO addressServiceModel = gson.fromJson(value, AddressServiceModelVO.class);
 			
 			Address address = new Address(null, addressServiceModel.getBairro(), 
 					addressServiceModel.getCidade(), addressServiceModel.getCep(), 

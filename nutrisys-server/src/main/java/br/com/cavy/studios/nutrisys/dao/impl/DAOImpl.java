@@ -60,7 +60,7 @@ public class DAOImpl<T, PK extends Serializable> implements DAO<T, PK> {
 			throw new IllegalArgumentException("Param T cant be null.");
 		}
 		
-		Criteria criteria = this.createCriteria(t);
+		Criteria criteria = this.createCriteria((Class) t);
 		
 		return criteria.list();
 	}
@@ -72,13 +72,15 @@ public class DAOImpl<T, PK extends Serializable> implements DAO<T, PK> {
 	
 	public Session getSession() {
 		
-		return (Session) this.entityManager.getDelegate();
+		Session session = (Session) this.entityManager.getDelegate();
+		
+		return session.getSessionFactory().openSession();
 	}
 
 	@Override
-	public Criteria createCriteria(T t) {
+	public Criteria createCriteria(Class clazz) {
 
-		return this.getSession().createCriteria((Class) t);
+		return this.getSession().createCriteria(clazz);
 	}
 	
 }

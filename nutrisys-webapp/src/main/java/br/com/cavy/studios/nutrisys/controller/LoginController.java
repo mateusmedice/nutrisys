@@ -7,14 +7,20 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.Validator;
+import br.com.cavy.studios.nutrisys.model.Client;
+import br.com.cavy.studios.nutrisys.model.ServiceProvider;
 import br.com.cavy.studios.nutrisys.service.AddressService;
-import br.com.cavy.studios.nutrisys.service.UserService;
+import br.com.cavy.studios.nutrisys.service.EncryptionService;
+import br.com.cavy.studios.nutrisys.service.ServiceProviderService;
 
 @Resource
 public class LoginController {
 
 	@Autowired
-	private UserService userService;
+	private ServiceProviderService serviceProviderService;
+	
+	@Autowired
+	private EncryptionService encryptionService;
 
 	@Autowired
 	private Validator validator;
@@ -24,9 +30,11 @@ public class LoginController {
 
 	@Autowired
 	private AddressService addressService;
+	
+	private final LoggedUser loggedUser;
 
-	public LoginController() {
-		
+	public LoginController(LoggedUser loggedUser) {
+		this.loggedUser = loggedUser;
 	}
 
 	@Get("/login")
@@ -37,23 +45,42 @@ public class LoginController {
 	@Post("/login")
 	public void logar(String login, String senha) {
 		
-		/*
-		Usuario usuario = autenticador.autentica(login, senha);
-		if (usuario == null) {
-			validator.add(new ValidationMessage("Login e/ou senha inválidos", "Login"));
-			validator.onErrorForwardTo(this).login();
+		if ((login == null || login.isEmpty()) || (senha == null || senha.isEmpty())) {
+
+			this.result.include("", "").redirectTo(this).login();
+			// ADD ERROR MSG
 		}
 		
-		usuarioWeb.loga(usuario);
-		*/
+		ServiceProvider serviceProvider = 
+			this.serviceProviderService.findBy(
+				login, this.encryptionService.encrypt(senha));
 		
-		result.redirectTo(DashboardController.class).dashboard();
+		if (serviceProvider != null) {
+			this.loggedUser.login(serviceProvider);
+			this.loggedUser.setClient(false);
+
+			this.result.redirectTo(DashboardController.class).dashboard();
+			
+		} else {
+			// procura se é cliente
+			
+			this.loggedUser.login(new Client());
+			this.loggedUser.setClient(false);
+			
+			// se não for cliente direciona para a tela de new account
+			this.result.redirectTo(this).createNew();
+		}
+	}
+	
+	@Get("/createNew")
+	public void createNew() {
+		this.result.redirectTo(ServiceProviderController.class).serviceProvider();
 	}
 	
 	@Get("/logout")
 	public void sair() {
 		// usuarioWeb.logout();
-		result.redirectTo(this).login();
+		this.result.redirectTo(this).login();
 	}
 	
 }

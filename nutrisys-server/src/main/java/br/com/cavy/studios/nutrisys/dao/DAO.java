@@ -24,5 +24,5 @@ public interface DAO<T, PK extends Serializable> {
 	
 	Session getSession();
 	
-	Criteria createCriteria(T t);
+	Criteria createCriteria(Class clazz);
 }

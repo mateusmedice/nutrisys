@@ -8,7 +8,8 @@
 		<pattern>/usuario/altera*</pattern>
 		<pattern>/usuario/edita*</pattern>
 		<pattern>/issues*</pattern>
-		<pattern>/projetos*</pattern>
+		<pattern>/revenue*</pattern>
 		<pattern>/dashboard*</pattern>
+		<pattern>/serviceProvider*</pattern>
     </decorator>
 </decorators>

@@ -8,6 +8,8 @@
 	<persistence-unit name="NutriSysPU">
 		
 	    <class>br.com.cavy.studios.nutrisys.model.Address</class>
+	    <class>br.com.cavy.studios.nutrisys.model.ServiceProvider</class>
+	    <class>br.com.cavy.studios.nutrisys.model.Client</class>
 	    
 	</persistence-unit>
 	

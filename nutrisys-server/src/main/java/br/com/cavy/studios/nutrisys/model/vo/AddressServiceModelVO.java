@@ -1,6 +1,6 @@
-package br.com.cavy.studios.nutrisys.model;
+package br.com.cavy.studios.nutrisys.model.vo;
 
-public class AddressServiceModel {
+public class AddressServiceModelVO {
 
 	private String bairro;
 	private String cidade;

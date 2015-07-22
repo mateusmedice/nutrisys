@@ -1,13 +1,11 @@
 package br.com.cavy.studios.nutrisys.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
-import br.com.cavy.studios.nutrisys.model.Client;
+import br.com.cavy.studios.nutrisys.model.ServiceProvider;
 import br.com.cavy.studios.nutrisys.service.ClientService;
 
 @Resource
@@ -19,16 +17,24 @@ public class DashboardController {
 	@Autowired
 	private ClientService clientService;
 	
-	public DashboardController() {
-
+	private final LoggedUser loggedUser;
+	
+	public DashboardController(LoggedUser loggedUser) {
+		this.loggedUser = loggedUser;
 	}
 	
 	@Get("/dashboard")
 	public void dashboard() {
 		
-		List<Client> clientList = clientService.getAll();
+		if (!loggedUser.isClient()) {
+			
+			ServiceProvider serviceProvider = (ServiceProvider) loggedUser.getUser();
+			
+			this.result.include("clientList", serviceProvider.getClients());	
+		}
+		
 				
-		this.result.include("clientList", clientList);
+		
 	}
 
 }
