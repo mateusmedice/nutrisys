@@ -14,10 +14,10 @@
 		<div class="login-form">
 			<form action="${ctx}/login" method="post">
 				<h2>Login</h2>
-				<input type="text" placeholder="Usuário" name="login">
-				<input type="password" placeholder="Senha" name="senha">
-				<button class="btn btn-primary" type="submit">Logar</button>
-				<a href="${ctx}/createNew">Sign-In</a>
+				<input type="text" placeholder="DDDD" name="login">
+				<input type="password" placeholder="dddd" name="senha">
+				<button class="btn btn-primary" type="submit">ddd</button>
+				<a href="${ctx}/createNew">ddd</a>
 			</form>
 		</div>
 		

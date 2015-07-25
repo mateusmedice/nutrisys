@@ -7,12 +7,13 @@
 	<display-name>Nutrisys Webapp</display-name>
 
 	<!-- ******************************************************* -->
-	<!-- Configuração do SiteMesh -->
-	<!-- ******************************************************* --> 
+	<!-- Configuraï¿½ï¿½o do SiteMesh -->
+	<!-- ******************************************************* -->
 	<filter>
 		<filter-name>sitemesh</filter-name>
 		<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
 	</filter>
+	
 	<filter-mapping>
 		<filter-name>sitemesh</filter-name>
 		<url-pattern>/*</url-pattern>
@@ -25,7 +26,13 @@
 		<param-name>br.com.caelum.vraptor.encoding</param-name>
 		<param-value>UTF-8</param-value>
 	</context-param>
-	<!-- Define Locale padrão -->
+
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>messages</param-value>
+	</context-param>
+
+	<!-- Define Locale padrao -->
 	<context-param>
 		<param-name>javax.servlet.jsp.jstl.fmt.locale</param-name>
 		<param-value>pt_BR</param-value>
@@ -35,16 +42,16 @@
 		<filter-name>vraptor</filter-name>
 		<filter-class>br.com.caelum.vraptor.VRaptor</filter-class>
 	</filter>
+	
 	<filter-mapping>
 		<filter-name>vraptor</filter-name>
 		<url-pattern>/*</url-pattern>
 		<dispatcher>FORWARD</dispatcher>
 		<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
-
-
+	
 	<!-- ******************************************************* -->
-	<!-- Configuracao da Aplicação -->
+	<!-- Configuracao da Aplicaï¿½ï¿½o -->
 	<!-- ******************************************************* -->
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>

@@ -62,12 +62,12 @@ public class LoginController {
 			this.result.redirectTo(DashboardController.class).dashboard();
 			
 		} else {
-			// procura se é cliente
+			// procura se e cliente
 			
 			this.loggedUser.login(new Client());
 			this.loggedUser.setClient(false);
 			
-			// se não for cliente direciona para a tela de new account
+			// se nao for cliente direciona para a tela de new account
 			this.result.redirectTo(this).createNew();
 		}
 	}
@@ -79,7 +79,7 @@ public class LoginController {
 	
 	@Get("/logout")
 	public void sair() {
-		// usuarioWeb.logout();
+		this.loggedUser.logout();
 		this.result.redirectTo(this).login();
 	}
 	
