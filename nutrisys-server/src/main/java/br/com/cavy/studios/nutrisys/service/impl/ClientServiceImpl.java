@@ -1,6 +1,5 @@
 package br.com.cavy.studios.nutrisys.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,21 +14,16 @@ public class ClientServiceImpl implements ClientService {
 	
 	@Autowired
 	private ClientDAO clientDAO;
-	
+
+
 	@Override
-	public List<Client> getAll(Long idUser) {
-
-		List<Client> clientList = new ArrayList<Client>();
+	public Client save(Client client) {
+	
+		if (client == null) {
+			// evia o erro
+		}
 		
-		Client client = new Client();
-		client.setNickname("Nick de Teste");
-		client.setFullName("Teste da Silva");
-		client.setEmail("mateus.medice@gmail.com");
-
-		clientList.add(client);
-		clientList.add(client);
-		
-		return clientList;
+		return this.clientDAO.save(client);
 	}
 	
 }

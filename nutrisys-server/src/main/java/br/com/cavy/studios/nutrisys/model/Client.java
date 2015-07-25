@@ -2,6 +2,7 @@ package br.com.cavy.studios.nutrisys.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -19,9 +20,31 @@ public class Client extends User implements Serializable {
 	@OneToOne
 	@JoinColumn(name="addressId")
 	private Address address;
-	
+
+	@Column(name="weight")
+	private Integer weight;
+
+	@Column(name="size")
+	private Integer size;
+
 	public Client() {
 		
+	}
+	
+	public Integer getWeight() {
+		return weight;
+	}
+
+	public void setWeight(Integer weight) {
+		this.weight = weight;
+	}
+
+	public Integer getSize() {
+		return size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
 	}
 
 	public Address getAddress() {

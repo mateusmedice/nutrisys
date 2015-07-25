@@ -10,6 +10,7 @@
 	    <class>br.com.cavy.studios.nutrisys.model.Address</class>
 	    <class>br.com.cavy.studios.nutrisys.model.ServiceProvider</class>
 	    <class>br.com.cavy.studios.nutrisys.model.Client</class>
+	    <class>br.com.cavy.studios.nutrisys.model.Parameterization</class>
 	    
 	</persistence-unit>
 	
