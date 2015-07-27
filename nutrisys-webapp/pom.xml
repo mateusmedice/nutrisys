@@ -177,7 +177,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>nutrisys-webapp</finalName>
+		<finalName>nutrisys</finalName>
 
 		<pluginManagement>
 			<plugins>
